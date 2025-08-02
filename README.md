@@ -22,9 +22,14 @@ AstralX-Review/
 │   │   │   └── QuantumAudioExtractor.kt
 │   │   ├── privacy/                   # Privacy components
 │   │   │   └── PrivacyManager.kt
+│   │   ├── security/                  # Security components
+│   │   │   └── NetworkSecurityManager.kt
 │   │   ├── webview/                   # WebView components
 │   │   │   └── AstralWebView.kt
 │   │   └── performance/               # Performance monitoring
+│   ├── di/                            # Dependency injection
+│   │   ├── CoreModule.kt              # Core component providers
+│   │   └── NetworkModule.kt           # Network component providers
 │   ├── domain/                        # Domain layer
 │   │   ├── model/                     # Domain models
 │   │   │   ├── Tab.kt
@@ -34,6 +39,11 @@ AstralX-Review/
 │   │       ├── TabRepository.kt
 │   │       ├── BookmarkRepository.kt
 │   │       └── HistoryRepository.kt
+│   ├── downloads/                     # Download management
+│   │   ├── DownloadRetryManager.kt    # Retry logic with backoff
+│   │   └── VideoExtractorFactory.kt   # Video URL extraction
+│   ├── network/                       # Network components
+│   │   └── CertificatePinningInterceptor.kt
 │   └── presentation/                  # UI layer
 │       └── main/
 │           └── MainActivity.kt
@@ -86,6 +96,18 @@ The project follows **Clean Architecture** principles:
 - Adult content optimization
 - Advanced codec support (H.264, H.265, VP9, AV1)
 - Chromecast integration
+
+### 7. **Network Security**
+- VPN kill switch with traffic blocking
+- Certificate pinning for HTTPS
+- Network connectivity monitoring
+- Secure HTTP client configuration
+
+### 8. **Download Management**
+- Exponential backoff retry logic
+- Multiple video extraction methods
+- Resume capability with progress tracking
+- Parallel download support
 
 ## 📋 Dependencies
 
